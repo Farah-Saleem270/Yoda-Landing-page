@@ -2,6 +2,7 @@
 
 :root {
     --primary-color: #703635;
+    --primary-color-dark: #3e1d1d;
     --text-dark: #000;
     --white: #fff;
     --max-width: 1200px;
@@ -13,7 +14,6 @@
     font-family: "Roboto Condensed", sans-serif;
     box-sizing: border-box;
 }
-
 
 img {
     display: flex;
@@ -98,20 +98,20 @@ header {
     overflow: hidden;
 }
 
-.header-img img{
+.header-img img {
     margin-top: 5rem;
     max-width: 500px;
     margin-inline: auto;
 }
 
-.header-content h2{
+.header-content h2 {
     font-size: 2rem;
     font-weight: 700;
     color: var(--primary-color);
     text-align: center;
 }
 
-.header-content h1{
+.header-content h1 {
     margin-bottom: 1rem;
     font-size: 4rem;
     font-weight: 800;
@@ -120,16 +120,60 @@ header {
     text-align: center;
 }
 
-.header-content p{
+.header-content p {
     margin-bottom: 2rem;
-    
+    font-weight: 500;
+    line-height: 1.75rem;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.header-btn {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.header-btn button {
+    padding: 1rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 5rem;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 
-@media (width > 768px) {
+.header-btn button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.header-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.header-socials a {
+    padding: 8px 10px;
+    font-size: 1.5rem;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 100%;
+}
+
+.header-socials a:hover {
+    background-color: var(--primary-color-dark);
+}
+
+@media (width > 850px) {
     nav {
         position: static;
-        padding: 1rem 1rem;
+        padding: 0 1rem;
         max-width: var(--max-width);
         margin-inline: auto;
         display: flex;
@@ -176,5 +220,28 @@ header {
         color: var(--primary-color);
     }
 
+    .header-img img {
+        margin-top: 0;
+        max-width: 700px;
+        margin-inline: auto;
+    }
+
+
+    header {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+
+    .header-content {
+        grid-area: 1/1/2/2;
+    }
+
+    .header-content :is(h1, h2, p, .header-btn) {
+        text-align: left;
+    }
+
+    .header-socials {
+        justify-content: flex-start;
+    }
 
 }
