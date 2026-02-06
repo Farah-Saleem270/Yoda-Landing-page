@@ -170,7 +170,7 @@ header {
     background-color: var(--primary-color-dark);
 }
 
-@media (width > 850px) {
+@media (width >  850px) {
     nav {
         position: static;
         padding: 0 1rem;
